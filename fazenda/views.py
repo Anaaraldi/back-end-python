@@ -1,8 +1,7 @@
-from django.shortcuts import render
-
 # Create your views here.
 
 from django.shortcuts import render
+from django.http import HttpResponse
 
 def sobre(request):
     context = {
@@ -23,3 +22,12 @@ def sobre(request):
         """
     }
     return render(request,'sobre.html', context)
+
+def contato(request):
+    return render(request, 'contato.html')
+
+def page_perfil_usuario(request, username):
+    return HttpResponse(f"Olá {username}, seja bem-vinda ao site Fazenda Rei do Gado.")
+
+def page_home(request):
+    return HttpResponse("Fazenda Rei do Gado: Onde a tradição encontra a inovação.")
